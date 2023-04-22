@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from "react";
+import React, { useState, Suspense, useMemo } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -19,9 +19,14 @@ function App() {
     setTheme((theme) => (theme === "light" ? "dark" : "light"));
   };
 
+  const value = useMemo(() => ({
+    theme,
+    toggleTheme
+  }), [theme])
+
   return (
     <Router>
-      <ThemeProvider value={{theme, toggleTheme}}>
+      <ThemeProvider value={value}>
         <div className={theme}>
           <div className="container">
             <Nav />
