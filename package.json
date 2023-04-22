@@ -4,7 +4,7 @@
   "description": "Curriculum for TylerMcGinnis.com's React Hooks course.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider webpack-dev-server",
     "build": "NODE_ENV='production' webpack",
     "build-for-windows": "SET NODE_ENV='production' && webpack"
   },
