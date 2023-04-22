@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { useState, Suspense } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -21,7 +21,7 @@ function App() {
 
   return (
     <Router>
-      <ThemeProvider value={theme}>
+      <ThemeProvider value={{theme, toggleTheme}}>
         <div className={theme}>
           <div className="container">
             <Nav />
