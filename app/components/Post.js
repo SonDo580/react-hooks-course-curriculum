@@ -80,7 +80,7 @@ export default function Post() {
 
   return (
     <>
-      {loadingPost === true ? (
+      {loadingPost ? (
         <Loading text="Fetching post" />
       ) : (
         <>
@@ -96,8 +96,8 @@ export default function Post() {
           <p dangerouslySetInnerHTML={{ __html: post.text }} />
         </>
       )}
-      {loadingComments === true ? (
-        loadingPost === false && <Loading text="Fetching comments" />
+      {loadingComments ? (
+        !loadingPost && <Loading text="Fetching comments" />
       ) : (
         <>
           {comments.map((comment) => (
