@@ -24,6 +24,7 @@ function reducer(state, action) {
     case "FETCH_POST_SUCCESS":
       return {
         ...state,
+        error: null,
         loadingPost: false,
         post: action.post,
       };
@@ -31,6 +32,7 @@ function reducer(state, action) {
     case "FETCH_COMMENTS_SUCCESS":
       return {
         ...state,
+        error: null,
         loadingComments: false,
         comments: action.comments,
       };
